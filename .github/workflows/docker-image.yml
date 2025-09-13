@@ -1,16 +1,13 @@
-name: Docker Image CI
-
+name: first workflow
 on:
   push:
-    branches: [ "main" ]
-
+    branches:
+      - main
 jobs:
-
-  build:
-
+  example-job:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-cool-image:$(date +%s)
+      - name: Print a welcome message
+        run: echo "Welcome to our first GitHub"
+      - name: checkout repo
+        uses: actions/checkout@v5.0.0
